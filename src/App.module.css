@@ -1,0 +1,27 @@
+.app {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto 6rem auto;
+}
+
+.button {
+  background-color: #001219;
+  color: #f1faee;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #001219;
+}

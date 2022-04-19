@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// Dependencies
+import { useState } from "react";
+// Styles
+import styles from "./App.module.css";
+// Components
+import Hero from "./components/Hero/Hero";
+import Temperatures from "./components/Temperatures/Temperatures";
+// Data
+import data from "./api/data.json";
 
 function App() {
+  // Import ettiğimiz JSON veriyi "State" olarak tanımlıyoruz.
+  const [deg, setDeg] = useState(data?.currentDeg);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <Hero data={deg} />
+      <div className={styles.buttons}>
+        <button className={styles.button} onClick={() => setDeg(deg + 1)}>
+          Sıcaklığı Artır
+        </button>
+        <button className={styles.button} onClick={() => setDeg(deg - 1)}>
+          Sıcaklığı Düşür
+        </button>
+      </div>
+      <Temperatures data={data?.temperatures} temperature={deg} />
     </div>
   );
 }

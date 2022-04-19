@@ -1,0 +1,14 @@
+{
+  "currentDeg": 9,
+  "temperatures": [
+    {
+      "name": "Celcius"
+    },
+    {
+      "name": "Fahrenheit"
+    },
+    {
+      "name": "Kelvin"
+    }
+  ]
+}
